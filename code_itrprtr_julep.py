@@ -4,11 +4,11 @@ import textwrap
 from julep import Client
 from dotenv import load_dotenv
 
-from composio_julep import Action, ComposioToolset
+from composio_julep import Action, ComposioToolSet
     
 
 load_dotenv()
-toolset = ComposioToolset()
+toolset = ComposioToolSet()
 composio_tools = toolset.get_actions(actions=[Action.CODEINTERPRETER_EXECUTE_CODE])
 
 api_key = os.environ["JULEP_API_KEY"]
