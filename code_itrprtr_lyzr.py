@@ -9,7 +9,7 @@ from lyzr_automata.tasks.task_literals import InputType, OutputType
 
 
 dotenv.load_dotenv()
-from composio_lyzr import Action, ComposioToolset  # noqa: E402
+from composio_lyzr import Action, ComposioToolSet  # noqa: E402
 
 
 open_ai_text_completion_model = OpenAIModel(
@@ -27,8 +27,8 @@ lyzr_agent = Agent(
     prompt_persona="You are an intelligent programmer named CodeInterpreter. You are an expert at coding. Your goal is to help me finish a code change.",
 )
 
-composio_toolset = ComposioToolset()
-composio_tool = composio_toolset.get_lyzr_tool(Action.CODEINTERPRETER_EXECUTE_CODE)
+composio_toolset = ComposioToolSet()
+composio_tool = composio_toolset.get_actions(actions=[Action.CODEINTERPRETER_EXECUTE_CODE])
 
 task = Task(
     name="Code Execution",
