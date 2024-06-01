@@ -3,7 +3,7 @@ import os
 
 import dotenv
 from autogen import AssistantAgent, UserProxyAgent
-from composio_autogen import Action, ComposioToolset
+from composio_autogen import Action, ComposioToolSet
 
 
 # Loading the variables from .env file
@@ -31,10 +31,10 @@ user_proxy = UserProxyAgent(
 
 
 # Initialise the Composio Tool Set
-composio_tools = ComposioToolset()
+composio_tools = ComposioToolSet()
 
 # Register the preferred Applications, with right executor.
-composio_tools.register_actions(actions=Action.CODEINTERPRETER_EXECUTE_CODE, caller=chatbot, executor=user_proxy)
+composio_tools.register_actions.get_actions(actions=Action.CODEINTERPRETER_EXECUTE_CODE, caller=chatbot, executor=user_proxy)
 
 
 task = "Print 5 largest prime number under 10000"
