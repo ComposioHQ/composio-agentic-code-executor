@@ -1,13 +1,13 @@
 from crewai import Agent, Task
 from langchain_openai import ChatOpenAI
-from composio_crewai import ComposioToolset, Action, App
+from composio_crewai import ComposioToolSet, Action, App
 
 import dotenv 
 
 # Loading the variables from .env file
 dotenv.load_dotenv()
 llm = ChatOpenAI()
-composioToolset = ComposioToolset(actions=[Action.CODEINTERPRETER_EXECUTE_CODE])
+composioToolset = ComposioToolSet.get_actions(actions=[Action.CODEINTERPRETER_EXECUTE_CODE])
 
 crewai_agent = Agent(
     role="Code interpreter Agent",
